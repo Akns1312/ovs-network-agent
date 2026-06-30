@@ -1,6 +1,5 @@
 import requests
 from google.adk.agents import Agent
-from google.adk.models.lite_llm import LiteLlm
 
 OVS_MCP_URL = "http://localhost:8080/mcp"
 AP_MCP_URL  = "http://localhost:8081/ap"
@@ -82,7 +81,7 @@ def ap_mcp(tool: str, arguments: dict = None) -> dict:
 
 root_agent = Agent(
     name="network_agent",
-    model=LiteLlm(model="ollama_chat/qwen2.5:7b-instruct"),
+    model="gemini-3.1-flash-lite",
     description=(
         "An AI assistant for managing both an Open vSwitch (OVS) "
         "software switch and a WiFi Access Point in real time."
